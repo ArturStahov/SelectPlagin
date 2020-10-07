@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0px;
+  margin: 0px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: $main-font-family;
+
+  /*
+   * CSS image reference example.
+   */
+  background-image: url('../images/bg-pattern.png');
+  padding-top: 100px;
+}
+
+.container {
+  margin: 0 auto;
+  @media screen and (max-width: $mobile-bp-max) {
+    // width: 100%;
+    width: $mobile-w-min;
+  }
+  @media screen and (min-width: $tablet-bp-min) {
+    width: $tablet-w;
+  }
+  @media screen and (min-width: $desktop-bp-min) {
+    width: $desktop-w;
+  }
+}

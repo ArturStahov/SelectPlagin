@@ -1,0 +1,82 @@
+.app {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.select {
+  position: relative;
+  width: 100%;
+  z-index: 100;
+
+  &.open {
+    .select-dropdown {
+      border-top: none;
+      display: block;
+    }
+    .select-input {
+      border-bottom: none;
+    }
+    .select-backdrop {
+      display: block;
+    }
+  }
+
+  &-backdrop {
+    display: none;
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+  }
+
+  &-input {
+    background-color: $select-input;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    height: $select-height;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3) inset;
+    cursor: pointer;
+  }
+
+  &-dropdown {
+    display: none;
+    position: absolute;
+    top: $select-height;
+    left: 0;
+    right: 0;
+    background-color: $select-dropdawn;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+  }
+
+  &-list {
+    padding: 1rem;
+  }
+
+  &-item {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    transition-property: background-color;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in;
+    cursor: pointer;
+    &:not(:last-child) {
+      margin-bottom: 5px;
+    }
+    &:hover {
+      background-color: $select-item-hover;
+    }
+    &.selected {
+      background-color: $selected-item-color;
+    }
+  }
+}
